@@ -10,7 +10,6 @@ import { DocViewTableRowBtnFilterAdd } from './table_row_btn_filter_add';
 import { DocViewTableRowBtnFilterRemove } from './table_row_btn_filter_remove';
 import { DocViewTableRowBtnToggleColumn } from './table_row_btn_toggle_column';
 import { DocViewTableRowBtnCollapse } from './table_row_btn_collapse';
-import { DocViewTableRowBtnFilterExists } from './table_row_btn_filter_exists';
 import { DocViewTableRowIconNoMapping } from './table_row_icon_no_mapping';
 import { DocViewTableRowIconUnderscore } from './table_row_icon_underscore';
 import { FieldName } from './field_name/field_name';
@@ -67,11 +66,6 @@ export function DocViewTableRow({
           {typeof onToggleColumn === 'function' && (
             <DocViewTableRowBtnToggleColumn active={isColumnActive} onClick={onToggleColumn} />
           )}
-          <DocViewTableRowBtnFilterExists
-            disabled={!fieldMapping || !fieldMapping.filterable}
-            onClick={() => onFilter('_exists_', field, '+')}
-            scripted={fieldMapping && fieldMapping.scripted}
-          />
         </td>
       )}
       <td className="osdDocViewer__field" data-test-subj="osdDocViewerField">
