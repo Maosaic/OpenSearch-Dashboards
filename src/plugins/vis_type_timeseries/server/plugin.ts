@@ -46,7 +46,6 @@ import { getVisData, GetVisData, GetVisDataOptions } from './lib/get_vis_data';
 import { ValidationTelemetryService } from './validation_telemetry';
 import { UsageCollectionSetup } from '../../usage_collection/server';
 import { PluginStart } from '../../data/server';
-import { visDataRoutes } from './routes/vis';
 import { visDataRawRoutes } from './routes/vis_raw';
 // @ts-ignore
 import { fieldsRoutes } from './routes/fields';
@@ -134,7 +133,6 @@ export class VisTypeTimeseriesPlugin implements Plugin<VisTypeTimeseriesSetup> {
         ...plugins,
         globalConfig$,
       });
-      visDataRoutes(router, framework, validationTelemetry);
       visDataRawRoutes(router, framework, validationTelemetry);
 
       fieldsRoutes(framework);
