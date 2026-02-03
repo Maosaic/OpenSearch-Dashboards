@@ -132,6 +132,7 @@ describe('App', () => {
       />
     );
     // Check that the root component is Router (BrowserRouter) when not embedded
+    // @ts-expect-error TS2339 TODO(ts-error): fixme
     expect(container.type().name).toBe('BrowserRouter');
   });
 });
